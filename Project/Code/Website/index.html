@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Spike | IoT</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+<header>
+    <ul>
+        <script language="javascript">
+            function Home()
+            {
+                location.reload(); // refresh the website
+            }
+            function About()
+            {
+                alert("This is the data visualization for IoT project of group 12.\n" +
+                    "The header of the website allow people to add/delete sensor nodes to/from system and download sensor data.\n" +
+                    "The left side of the website is the data collected by the selected sensor node.\n" +
+                    "The right side of the website is the location of sensor nodes. You can select sensor node on the map."); //弹出对话框
+            }
+            function Add_Node()
+            {
+                var id = prompt("Sensor node ID", ""); // give input value to variable 'id'
+                var latitude = prompt("Sensor node latitude", "");
+                var longitude = prompt("Sensor node longitude", "");
+                // The first para is prompt, the second para is default value in input box
+                if (id && longitude && latitude)// input something not null
+                {
+                    xhrPost("http://3.87.68.197:8099/sensornumber/insert",id,latitude,longitude)
+                    alert("Node Added Successfully")
+                }
+                else
+                {
+                    alert("Information missing")
+                }
+            }
+            function Delete_Node()
+            {
+                var id = prompt("Sensor node ID", ""); // give input value to variable 'id'
+                if (id)
+                {
+                    url = "http://3.87.68.197:8099/sensornumber/delete/" + id;
+                    xhrDel(url);
+                    url = "http://3.87.68.197:8099/sensordata/delete/" + id;
+                    xhrDel(url);
+                    alert("Delete Successfully")
+                }
+                else
+                {
+                    alert("Information missing")
+                }
+            }
+        </script>
+        <li class="click" onclick="Home()">Home</li>
+        <li class="click" onclick="About()">About</li>
+        <li class="click" onclick="Add_Node()">Add Node</li>
+        <li class="click" onclick="Delete_Node()">Delete Node</li>
+        <li><a href="http://3.87.68.197:8099/download/allsensordata.csv">Download Data</a></li>
+
+    </ul>
+</header>
+
+<div class="container">
+    <div class="col-left">
+        <div id="humidity_chart" class="chart"></div>
+        <div id="temperature_chart" class="chart"></div>
+        <div id="soil_moisture_chart" class="chart"></div>
+    </div>
+
+    <div class="col-right">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

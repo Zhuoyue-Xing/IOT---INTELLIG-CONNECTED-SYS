@@ -1,0 +1,27 @@
+Authorizing a request:
+https://developer.twitter.com/en/docs/basics/authentication/guides/authorizing-a-request
+
+Creating a signature;
+https://developer.twitter.com/en/docs/basics/authentication/guides/creating-a-signature
+
+Base64 encode:
+http://tool.oschina.net/encrypt?type=3
+
+Timestamp:
+https://tool.lu/timestamp/
+
+
+Calculating the signature
+
+Signature base string
+POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json%26oauth_consumer_key%3DuEc94cQefrce2NbiX2kqXwvv4%26oauth_nonce%3DHavOu+6F6j/vX8TS8n1IzKHYPBvejrX6g64uJvj5smk=%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1570249774%26oauth_token%3D1179830540075229185-Q0Kqkjw8ZgLiKm7axyh5ZjtfZnurjB%26oauth_version%3D1.0%26status%3DHello%2c%20this%20is%20a%20test%20tweet
+
+Signing key
+9eOKBtB7ocCIqpQBaqC5fJVH9Z85fmuiGzPEFEy4Ntt4JRPQbc&yE8eSL64qPpA9TigixH74ESdcRQAezS2jCw9d6PWKFjuO
+
+Function
+import hmac
+message = b'Hello world'
+key = b'secret'
+h = hmac.new(key,message,digestmod='MD5')
+print(h.hexdigest())

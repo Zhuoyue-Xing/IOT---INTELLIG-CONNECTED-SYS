@@ -1,0 +1,86 @@
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+header {
+    background-color: #0246a9;
+    border-bottom: 1px solid #0246a9;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+ul {
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+li {
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    margin: auto 15px;
+    font-size: 20px;
+    font-weight: 300;
+    /*text-transform: uppercase;*/
+    display: inline-block;
+    /*width: 100px;*/
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.container {
+    top: 50px;
+    background-color: #04817d;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.col-left {
+    margin-top: 1cm;
+    margin-bottom: 0.3cm;
+    margin-left: 0.3cm;
+    width: 49%;
+    float: left;
+    min-height: 600px;
+    /*background-color: #e4b526;*/
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-right {
+    margin-top: 1cm;
+    margin-bottom: 0.3cm;
+    margin-right: 0.3cm;
+    width: 49%;
+    float: right;
+    min-height: 600px;
+    /*background-color: #e48e2a;*/
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart {
+    width: 100%;
+    flex: auto;
+    z-index: 8;
+}
+
+#map {
+    width: 100%;
+    flex: auto;
+    z-index: 8;
+}

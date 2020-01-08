@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Columbia University EECS E4764 IoT Project Report #12</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Sensing the Health of Tree-pit Soil</h1>
+							<p>Columbia University <br>
+								EECS E4764 Fall'19 Internet of Things<br>
+								Intelligent and Connected Systems<br>
+								Team 12 Project Report
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Motivation</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/dqnq9AHTOqM" frameborder="0" allowfullscreen></iframe>
+
+								<h2 class="alt">Sensing the Health of Tree-pit Soil</h2>
+<!--								<p>Project Wonderland is a blah blah blah</p>-->
+								<p>A long-range, low-power, wireless soil conditions sensing system was developed in this project.
+									The system can measure relative humidity, temperature and soil moisture simultaneously over long duration and can be scaled up to measure at multiple locations.
+									The data are collected from the sensors and transferred to the gateway via LoRa wireless communication module, then the data are uploaded to a cloud database.
+									The real time soil conditions at multiple locations can be viewed on a website, which also provides functions including: registering new sensing unit(s), removing old unit(s), downloading the complete dataset.
+									A simple prediction method was also introduced into the system, when the measured value deviates from the predicted value for a certain threshold, an alert will be send to users via email.</p>
+
+
+							<footer>
+								<a href="#motivation" class="button scrolly">Motivation</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Motivation</h2>
+							</header>
+
+							<ul style="list-style-type:disc; text-align: left">
+								<li> The size of the traditional soil condition sensors for field measurement are relatively big.</li>
+								<li> If you want to deploy these sensors for a long time, it will require a lot of energy, which is hard to be powered solely by a battery without replacement.</li>
+								<li> Usually, these sensors don't have wireless communication capacity.</li>
+								<li> The health of tree-pit soil is interrelated to the street tree's ability to mitigate urban stormwater runoff. The proposed system can help advance understanding of this mutual mechanism. </li>
+								<li> The proposed system also has many other application potentials, including: smart farm, climate modelling and adaptation, subsurface waste management and groundwater remediation, etc.</li>
+							</ul>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="system" class="three">
+						<div class="container">
+
+							<header>
+								<h2>System</h2>
+							</header>
+
+<!--							<p align="left">Remember to use combination of descriptions, photos, and figures</p>-->
+
+							<h3 align="left">Architecture</h3>
+							<a class="image fit"><img src="images/System_Diagram.png" alt="System Diagram" /></a>
+							<h6 align="center">System Diagram</h6>
+
+							<p align="left">As shown in the system diagram, the system consists of four main components: 1) sensing unit, 2) LoRa gateway 3) cloud server and database, and 4) operation dashboard website.</p>
+
+
+							<h3 align="left">Technical Components</h3>
+
+
+							<ol style="list-style-type: decimal; text-align: left; margin-left: 2rem">
+								<li><b>Sensing Unit</b>: <br>
+								A sensing unit collects data from separate sensors, then send the data to a LoRa gateway. <br>
+								It consists of a ESP8266 microcontroller, a LoRa wireless communication module as transmitter,
+								a soil moisture sensor and another sensor measuring temperature and relative humidity.
+								</li>
+
+								<li><b>LoRa Gateway</b>: <br>
+								A LoRa gateway consists of a ESP8266 microcontroller and a LoRa wireless communication module as receiver. <br>
+								It functions as a transfer station, which receives the data from the sensing units,
+								then send the data to the cloud database through the WiFi module on the microcontroller.
+								</li>
+
+								<li><b>Cloud Server and Database</b>: <br>
+								The cloud server was constructed using Flask web framework in Python, the database was established using MangoDB database program.
+								Both the server and the database were hosted on an AWS EC2 instance. <br>
+								The database stores the locations of the sensing units, as well as the measured data. <br>
+								The server accepts HTTP requests from the operation dashboard website, the sends back the corresponding responses.
+								A simple prediction method (moving average) was also introduced into the server, when the measured value deviates from the prediction for a certain threshold,
+								an alert email will be sent to users.
+								</li>
+
+								<li><b>Operation Dashboard Website</b>: <br>
+								The operation dashboard website provides a friendly user interface, on which you can view the real time data of each sensing unit by simply clicking it on the map.
+								You can also conveniently 1) add new unit by providing its ID number and location, 2) remove sensing unit by providing its ID number, 3) download the complete dataset.
+								</li>
+							</ol>
+
+
+
+							<h3 align="left">Prototype</h3>
+
+							<p align="left" style="display: inline-flex; justify-content: space-around">
+								<img src="images/sensing_unit.jpg" alt="Sensing Unit" style="width: 45%"/>
+								<img src="images/LoRa_gateway.jpg" alt="LoRa Gateway" style="width: 45%"/>
+							</p>
+							<p>
+								A sensing unit is shown in the left picture above, and a LoRa gateway is shown in the right picture.
+							</p>
+							<p>
+								<img src="images/prototype.jpg" alt="Prototype" style="width: 72%"/>
+							</p>
+							<p>
+								A prototype system in operation is shown in the picture above.
+							</p>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+
+							<article class="item" style="width:90%; display: inline-flex; flex-direction: column; justify-content: space-around">
+								<a href="#" class="image fit"><img src="images/operation_dashboard_1.png" alt="Operation Dashboard Website" /></a>
+								<header>
+									<h3>Operation Dashboard Website</h3>
+								</header>
+							</article>
+
+							<p>The layout of the operation dashboard website is shown in the picture above.</p>
+
+							<p align="left" style="display: inline-flex; justify-content: space-around">
+								<img src="images/operation_dashboard_unit_11.png" alt="Popup after clicking" style="width: 45%"/>
+								<img src="images/Email_Alert.jpg" alt="Email Alert" style="width: 50%"/>
+							</p>
+
+							<p align="left">
+								As shown in the left picture above, a message showing the ID number of the sensing unit will popup after the user click the unit on the map.
+								For demonstration purpose, besides the actual prototype sensing unit, a bunch of virtual units were generated, as shown on the map. <br>
+								An email alert will be triggered when the measured value deviates from the predicted value for a certain threshold.
+								An example is shown in the right picture above.
+							</p>
+
+							<p>
+								<img src="images/Expo.jpg" alt="Expo" style="width: 72%"/>
+							</p>
+
+							<p align="left">
+								For low-power feature, usually, the sensing unit works in deep sleep mode and will wake up every 15 minutes.
+								When it's in deep sleep mode, the current will only be 20 uA. If using a 2500 mAh battery, in theory, it can work continuously for years. <br>
+								For transmission range, as tested in city environment, it was found the sensing unit could talk to the gateway for at least 100 meters.
+								If the configuration can be improved further in ways like replacing the non-directional antenna to a directional one, this range can be even longer.
+								And in wide open area, the transmission range can potentially reach to several kilometers.
+							</p>
+
+
+
+						</div>
+					</section>
+
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">
+							<ul style="list-style-type: disc; text-align: left; margin-left: 1.5rem">
+								<li>Chen, Yujuan, Susan D. Day, Abbey F. Wick, and Kevin J. McGuire. 2014. “Influence of Urban Land Development and Subsequent Soil Rehabilitation on Soil Aggregates, Carbon, and Hydraulic Conductivity.” <i>Science of the Total Environment</i> 494–495(October 2014): 329–36.</li>
+								<li>Elliott, R.M., E.R. Adkins, P.J. Culligan, and M.I. Palmer. 2018. “Stormwater Infiltration Capacity of Street Tree Pits: Quantifying the Influence of Different Design and Management Strategies in New York City.” <i>Ecological Engineering</i> 111.</li>
+								<li>Hakimdavar, R., P.J. Culligan, A. Guido, and W.R. McGillis. 2016. “The Soil Water Apportioning Method (SWAM): An Approach for Long-Term, Low-Cost Monitoring of Green Roof Hydrologic Performance.” <i>Ecological Engineering</i> 93.</li>
+								<li>Mullaney, Jennifer, Terry Lucke, and Stephen J. Trueman. 2015. “A Review of Benefits and Challenges in Growing Street Trees in Paved Urban Environments.” <i>Landscape and Urban Planning</i> 134: 157–66.</li>
+							</ul>
+							</p>
+
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Profile_CY.jpg" alt="Chenye Yang" /></a>
+										<header>
+											<h3>Chenye Yang</h3>
+											<p>
+											<ul style="list-style-type: disc; text-align: left; margin-left: 2rem">
+												<li>M.S. Student in Electrical Engineering, Columbia University</li>
+												<li>B.Eng. in Automation (Honors Program), Xi'an Jiaotong University</li>
+											</ul>
+												<a href="https://www.linkedin.com/in/chenye-yang">LinkedIn</a>
+											</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Profile_HZ.jpg" alt="Haokai Zhao" /></a>
+										<header>
+											<h3>Haokai Zhao</h3>
+											<p>
+											<ul style="list-style-type: disc; text-align: left; margin-left: 2rem">
+												<li>Ph.D. Student in Civil Engineering and Engineering Mechanics, Columbia University</li>
+												<li>M.S. in Earth and Environmental Engineering, Columbia University</li>
+												<li>B.Eng. in Electrical Engineering and Automation, Tongji University</li>
+											</ul>
+												<a href="https://www.linkedin.com/in/haokaizhao">LinkedIn</a>
+											</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Profile_ZX_1.png" alt="Zhuoyue Xing" /></a>
+										<header>
+											<h3>Zhuoyue Xing</h3>
+											<p>
+											<ul style="list-style-type: disc; text-align: left; margin-left: 2rem">
+												<li>M.S. Student in Electrical Engineering, Columbia University</li>
+												<li>B.Eng. in Automation, Xi'an Jiaotong University</li>
+											</ul>
+												<a href="https://www.linkedin.com/in/Zhuoyue-Xing">LinkedIn</a>
+											</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Chenye Yang: </strong><a href="mailto:cy2540@columbia.edu">cy2540@columbia.edu</a></br>
+								<strong>Haokai Zhao: </strong><a href="mailto:hz2477@columbia.edu">hz2477@columbia.edu</a></br>
+								<strong>Zhuoyue Xing: </strong><a href="mailto:zx2269@columbia.edu">zx2269@columbia.edu</a></br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2019-3/">Columbia University EECS E4764 Fall '19 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+							</p>
+
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

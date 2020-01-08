@@ -1,0 +1,5 @@
+Upload to server
+scp -i keys.pem /Users/yangchenye/Downloads/serverflask.py ubuntu@ec2-3-87-68-197.compute-1.amazonaws.com:~/project
+
+Download from server
+scp -i keys.pem ubuntu@ec2-3-87-68-197.compute-1.amazonaws.com:~/project/serverflask.py /Users/yangchenye/Downloads/
