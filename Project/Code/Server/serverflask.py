@@ -15,8 +15,8 @@ from flask_cors import CORS
 import smtplib
 from email.mime.text import MIMEText
 
-gmail_user = 'iot2019temp@gmail.com'
-gmail_password = 'aleoxwrprndhangm' # your gmail password
+gmail_user = 'test@gmail.com' #Your e-mail-address
+gmail_password = 'password' # Your e-mail password
 app = Flask(__name__)
 CORS(app)
 app.config['MONGO_DBNAME']= 'project'
